@@ -13,12 +13,14 @@ const Login = () => {
     const handleOnSubmit = () =>{
         let user = users.find((x)=>(x.uName===userName && x.uPassword === password))
         if(user){
-            console.log('user',user);
-            setCookie('user-session',encodeURI(user.uId))
+            // directly storing userid in session
+            // I no its not good idea to directly store ID but in this case I have done it to maintain sassion.
+            // otherwise we could have stored in encoded form 
+            setCookie('user-session',(user.uId))
             navigate('/')
         }
         else{
-            console.log('Wrong Id Pass');
+            alert('Wrong Id Password');
         }
     }
 
@@ -32,8 +34,7 @@ const Login = () => {
                 style={{ maxWidth: 600 }}
                 initialValues={{ remember: true }}
                 onFinish={handleOnSubmit}
-                // ={handleOnSubmit}
-                // onFinishFailed={onFinishFailed}
+                className='login-form'
                 autoComplete="off"
             >
                 <Form.Item
