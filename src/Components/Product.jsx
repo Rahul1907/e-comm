@@ -61,7 +61,7 @@ const Product = ({ product }) => {
     return (
         <div className="card" key={product.id}>
             {contextHolder}
-            <img src={product.image} alt="" />
+            <img src={product.image} alt="product-img" />
             <h4 className='product-name'>{product.title}</h4>
             <h5 className='product-price'>{product.price}</h5>
 

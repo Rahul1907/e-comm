@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { remove, updateCart } from '../../Redux/cartSlice';
+import { updateCart } from '../../Redux/cartSlice';
 import { products } from '../../jsonData'
 import { Col, Row } from 'antd';
 
@@ -35,7 +35,7 @@ const Cart = () => {
         return (<div className='card' key={item.id}>
           <Row>
             <Col span={12}>
-              <img src={item.image} />
+              <img src={item.image} alt='product-img' />
               <div>
                 <button className='btn' onClick={() => { onRemoveItem(item) }}> Remove Item </button>
               </div>

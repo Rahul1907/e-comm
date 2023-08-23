@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import { products } from '../../jsonData'
 import Product from '../../Components/Product'
 import { getCookie } from '../../utils/utils'
